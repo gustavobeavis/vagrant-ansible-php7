@@ -17,7 +17,3 @@
 - name: Test | Composer is installed
   shell: composer
   always_run: yes
-
-- name: Test | Drush is installed
-  shell: drush
-  always_run: yes

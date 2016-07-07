@@ -3,6 +3,10 @@
   apt: pkg=nginx state=installed
   sudo: true
 
+- name: Nginx | create path SSL nginx
+  file: path=/etc/nginx/ssl state=directory  mode=0755
+  sudo: true
+
 - name: Nginx | ssl.crt
   template: src=nginx.crt.j2
             dest=/etc/nginx/ssl/nginx.crt

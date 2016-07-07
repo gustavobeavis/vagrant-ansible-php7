@@ -1,7 +1,11 @@
 server {
     listen 80;
+    listen 443 ssl;
 
     server_name {{ item.alias }} www.{{ item.alias }} {%- if item.custom_aliases is defined %} {{ item.custom_aliases }} {%- endif %};
+    ssl_certificate /etc/nginx/ssl/nginx.crt;
+    ssl_certificate_key /etc/nginx/ssl/nginx.key;
+
 
     root {{ sites_dir }}/{{ item.alias }}{{ item.index_file_folder | default("") }};
 
