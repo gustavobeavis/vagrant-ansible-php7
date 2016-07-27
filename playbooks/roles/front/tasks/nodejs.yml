@@ -5,7 +5,7 @@
   ignore_errors: true
 
 - name: NodeJS | Prepare for installation
-  raw: "curl -sL https://deb.nodesource.com/setup | sudo bash -"
+  raw: "curl -sL https://deb.nodesource.com/setup_6.x | sudo bash -"
   sudo: true
   when: npm_installed|failed
 
