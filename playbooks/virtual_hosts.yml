@@ -13,6 +13,13 @@
       with_items:
         - "{{ vhosts }}"
 
+    - name: Nginx | add "node" vhosts
+      template: src=templates/nginx.node.conf.j2 dest=/etc/nginx/sites-available/{{ item.alias }}
+      when: item.vhost_type == "node"
+      sudo: true
+      with_items:
+        - "{{ vhosts }}"
+
     - name: Nginx | add "drupal" vhosts
       template: src=templates/vhost_drupal.j2 dest=/etc/nginx/sites-available/{{ item.alias }}
       when: item.vhost_type == "drupal"
