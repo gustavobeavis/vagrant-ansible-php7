@@ -2,3 +2,4 @@
 - include: mysql.yml
 - include: nginx.yml
 - include: php.yml
+- include: redis.yml

@@ -10,6 +10,8 @@
     - php
     - mysql
     - adminer
+    - pgsql
+    - redis
     - automated_testing
     - front
 
